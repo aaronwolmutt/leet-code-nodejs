@@ -16,8 +16,8 @@ export function printSinglyLinkedListRecursively (head: ListNode): void {
 }
 
 export function reverseLinkedListIteratively (head: ListNode): ListNode {
-  const prev: ListNode = null
-  const current: ListNode = head
+  let prev: ListNode = null
+  let current: ListNode = head
   while (head != null) {
     // initialize temp
     const tempNext: ListNode = head.next
