@@ -1,4 +1,4 @@
-import { isPalindrome } from '../src/problems/two-pointer'
+import { isPalindrome, maxArea } from '../src/problems/two-pointer'
 
 describe('two pointer leet code problems', () => {
   describe('valid palindrome',
@@ -20,4 +20,15 @@ describe('two pointer leet code problems', () => {
         expect(result).toStrictEqual(true)
       })
     })
+  describe('two sum II', () => {
+    it('case 1', () => {
+
+    })
+  })
+  describe('max area', () => {
+    it('case 1', () => {
+      const result: number = maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])
+      expect(result).toStrictEqual(49)
+    })
+  })
 })

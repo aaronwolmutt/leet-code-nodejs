@@ -27,8 +27,8 @@ export default {
 
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
-     "/node_modules/"
-  ],
+    '/node_modules/'
+  ]
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
@@ -192,4 +192,4 @@ export default {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}

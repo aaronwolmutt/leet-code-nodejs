@@ -3,7 +3,7 @@ import {
   printSinglyLinkedListIteratively,
   reverseLinkedListIteratively,
   reverseLinkedListRecursively
-} from '../src/problems/linked_list'
+} from '../src/problems/linked-list'
 
 describe(' singly LinkedList unit tests and some leet code problems', () => {
   describe('instantiates correctly', () => {

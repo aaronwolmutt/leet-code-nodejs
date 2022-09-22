@@ -42,7 +42,7 @@ export function groupAnagrams (strs: string[]): string[][] {
       result[key] = [s]
     }
   }
-  return Object.values(result)
+  return Object.values(result).sort()
 }
 
 export function topKFrequentElements (nums: number[], k: number): number[] {

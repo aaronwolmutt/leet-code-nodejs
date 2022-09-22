@@ -31,8 +31,12 @@ describe('hashing problem tests', () => {
   })
   describe('groupAnagrams', () => {
     it('case 1', () => {
-      const result: string[][] = groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat'])
-      expect(result).toContainEqual([['bat'], ['nat', 'tan'], ['ate', 'eat', 'tea']])
+      const result: string[][] = []
+      for (const arr of groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat'])) {
+        result.push(arr.sort())
+      }
+      expect(result.sort((a, b) => { return a.length - b.length }))
+        .toEqual([['bat'], ['nat', 'tan'], ['ate', 'eat', 'tea']])
     })
   })
   describe('topKFrequentElements', () => {
