@@ -43,3 +43,27 @@ export function maxArea (height: number[]): number {
   }
   return result
 }
+
+export function longestRepeatingCharReplacement (s: string, k: number): number {
+  // count ocurrences of character
+  const occurrences: Map<string, number> = new Map()
+  let left: number = 0
+  let result: number = 0
+  for (let right = 0; right < s.length; right++) {
+    if (!occurrences.has(s[right])) {
+      occurrences.set(s[right], 1)
+    } else {
+      const count: number = occurrences.get(s[right])
+      occurrences.set(s[left], count + 1)
+    }
+    const windowLen: number = (right - left + 1)
+    const maxOccurrence: number = Math.max(...occurrences.values())
+    if (windowLen - maxOccurrence > k) {
+      const count: number = occurrences.get(s[left])
+      occurrences.set(s[left], count - 1)
+      left++
+    }
+    result = Math.max(result, windowLen - maxOccurrence)
+  }
+  return result
+}
