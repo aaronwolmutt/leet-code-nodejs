@@ -58,3 +58,26 @@ export function topKFrequentElements (nums: number[], k: number): number[] {
   const sorted = new Map([...freqs.entries()].sort((a, b) => b[1] - a[1])).keys()
   return Array.from(sorted).slice(0, k)
 }
+
+export function countHomogenous (s: string): number {
+  let substrings: Set<string> = new Set()
+  let j: number = 1
+  let temp: string = ''
+  for (let i = 0; i < s.length; i++) {
+    substrings.add(s[i])
+    // homogeneous sequence found
+    while (s[j] === s[i]) {
+      temp += s[j]
+      substrings.add(temp)
+      j++
+    }
+    temp = ''
+    j = i + 1
+  }
+  let result: number = 0
+  for (const i of substrings) {
+    const regex = new RegExp(i, 'gm')
+    result += s.match(regex).length
+  }
+  return result
+}

@@ -1,4 +1,4 @@
-import { containsDuplicate, groupAnagrams, topKFrequentElements, twoSum } from '../src/problems/hashing'
+import { containsDuplicate, countHomogenous, groupAnagrams, topKFrequentElements, twoSum } from '../src/problems/hashing'
 
 describe('hashing problem tests', () => {
   describe('containsDuplicate', () => {
@@ -56,6 +56,17 @@ describe('hashing problem tests', () => {
       const result: number[] = topKFrequentElements(
         [4, 1, -1, 2, -1, 2, 3], 2)
       expect(result).toStrictEqual([-1, 2])
+    })
+  })
+  describe('count number of homogeneous substrings', () => {
+    it('case 1', () => {
+      expect(countHomogenous('abbcccaa')).toEqual(13)
+    })
+    it('case 2', () => {
+      expect(countHomogenous('xy')).toEqual(2)
+    })
+    it('case 3', () => {
+      expect(countHomogenous('zzzzz')).toEqual(15)
     })
   })
 })
